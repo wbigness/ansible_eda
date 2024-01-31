@@ -1,0 +1,17 @@
+---
+- name: Display list of games
+  hosts: all
+
+  tasks:
+    - name: Show the list of games
+      ansible.builtin.debug:
+        msg:
+        - "Falken's Maze"
+        - Black Jack
+        - Gin Rummy
+        - Hearts
+        - Bridge
+        - Checkers
+        - Chess
+        - Poker
+        - Theaterwide Tic Tac Toe

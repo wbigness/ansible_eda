@@ -1,0 +1,17 @@
+---
+- name: Listen for events with webhook plugin
+  hosts: all
+  
+  # Utilize the webhook plugin
+  sources:
+    - ansible.eda.webhook:
+        host: 0.0.0.0
+        port: 6000
+
+  rules:
+    - name: 
+      condition: event.payload.message == "list games"
+
+      action:
+        run_playbook:
+          name: list_games.yml
