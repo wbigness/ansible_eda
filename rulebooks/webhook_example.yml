@@ -11,7 +11,6 @@
   rules:
     - name: 
       condition: event.payload.message == "list games"
-
       action:
         run_playbook:
           name: list_games.yml
