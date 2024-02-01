@@ -12,5 +12,5 @@
     - name: Show the games
       condition: event.payload.message == "list games"
       action:
-        run_playbook:
-          name: list_games.yml
+        run_job_template:
+          name: List Games
