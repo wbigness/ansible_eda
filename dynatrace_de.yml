@@ -1,0 +1,30 @@
+---
+version: 3
+
+dependencies:
+  ansible_core:
+    package_pip: ansible-core
+  ansible_runner:
+    package_pip: ansible-runner
+  galaxy: requirements.yml
+  python: []
+  system:
+    - pkgconf-pkg-config
+    - systemd-devel
+    - gcc
+    - python3.11
+    - python3.11-devel
+  python_interpreter:
+    package_system: "python3.11"
+    python_path: "/usr/bin/python3.11"
+
+options:
+  package_manager_path: /usr/bin/microdnf
+
+images:
+  base_image:
+    name: rhel9autohub.local/de-supported-rhel8:latest
+
+additional_build_files: []
+
+additional_build_steps: {}
