@@ -1,6 +1,6 @@
 ---
 - name: Display list of games
-  hosts: all
+  hosts: "{{ ansible_limit }}"
 
   tasks:
     - name: Show the list of games
