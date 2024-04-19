@@ -10,7 +10,10 @@
 
   rules:
     - name: Show the games
-      condition: event.payload.etags is selectattr('value', 'match', 'LINUX')
+      condition:
+	all:
+	  - event.payload.etags is selectattr('value', 'match', 'LINUX')
+	  - event.payload.message == 'list games'
       action:
         run_job_template:
           name: List Games
